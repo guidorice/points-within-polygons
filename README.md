@@ -1,15 +1,15 @@
 # points-within-polygons
 
-A points in polygons spatial join for Rust and WASM.
+A points in polygons spatial join for Rust and WebAssembly.
 
 ## Background
 
-Coming soon: blog post about this, written as someone completely new to Rust.
+🌵Coming soon: blog post about this, written as someone completely new to Rust.
 
 I modeled this after the [Turf.js](http://turfjs.org/)
 [pointsWithinPolygon](http://turfjs.org/docs/#pointsWithinPolygon) function and
-implemented the same function signature in Rust. I tried to implement the same
-algorithm as well, to make a fair comparison of the
+implemented (approximately) the same function signature in Rust. I tried to
+implement the same algorithm as well, to make a fair comparison of the
 [GeoRust](https://github.com/georust) crates which are utilized by this crate.
 The Rust function signature therefore is:
 
@@ -22,6 +22,8 @@ pub fn points_within_polygons(
 
 ## Requirements
 
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/lang/en/)
 - Rust and wasm-pack: https://rustwasm.github.io/wasm-pack/book/quickstart.html
 - Binaryen's wasm-opt: https://github.com/WebAssembly/binaryen
 
@@ -48,7 +50,7 @@ not really measuring the performance of the function.
 cargo +nightly bench
 ```
 
-## Run JavaScript node.js benchmarks to compare Turf.js vs this Rust crate
+## Run Node.js benchmarks to compare Turf.js vs this Rust crate as WebAssembly
 
 ```bash
 cd wasm
@@ -57,8 +59,8 @@ wasm-pack build --target nodejs
 # See below about optimizing the .wasm file. Do this before running yarn in js/.
 cd ../js
 rm -rf node_modules
-yarn
-yarn run benchmark
+yarn # installs packages into node_modules/
+yarn run benchmark # runs benchmark script from package.json
 ```
 
 ## Recommended: run binaryen's wasm-opt optimizer
