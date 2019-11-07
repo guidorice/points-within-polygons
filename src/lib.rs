@@ -50,16 +50,6 @@ fn geometries_with_bounds(
     .collect()
 }
 
-pub fn point_from_geojson_value<T>(value: geojson::Value) -> Option<Point<T>>
-where
-  T: Num + NumCast + PartialOrd + Copy + Float,
-{
-  match value {
-    geojson::Value::Point(_) => Some(TryInto::<Point<T>>::try_into(value).unwrap()),
-    _ => None,
-  }
-}
-
 // Helper function copied from geojson/src/conversion.rs
 fn create_geo_point<T>(point_type: &geojson::PointType) -> geo_types::Point<T>
 where
