@@ -1,0 +1,20 @@
+[package]
+name = "points-within-polygons"
+version = "0.1.0"
+authors = ["Alex G Rice <alex@ricegeo.dev>"]
+edition = "2018"
+description = "A points in polygons spatial join for Rust and WASM."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap ="2"
+geo = "0.12"
+geo-types = "0.4"
+geojson = { version = "0.16", features=["geo-types"] }
+geo-geojson = "0.1"
+num-traits = "*"
+
+[[bench]]
+name = "benchmark"
+harness = true

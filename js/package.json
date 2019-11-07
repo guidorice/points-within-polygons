@@ -1,0 +1,24 @@
+{
+  "name": "pip-rs",
+  "version": "1.0.0",
+  "description": "A point in polygon checker for Rust and WASM.",
+  "main": "index.ts",
+  "repository": "https://github.com/guidorice/pip-rs",
+  "author": "Alex G Rice",
+  "license": "MIT",
+  "scripts": {
+    "benchmark": "node_modules/typescript/bin/tsc benchmark.ts && node benchmark.js"
+  },
+  "dependencies": {
+    "@turf/turf": "^5.1.6",
+    "benchmark": "^2.1.4",
+    "microtime": "^3.0.0",
+    "points-within-polygons-wasm": "file:../wasm/pkg/",
+    "typescript": "^3.6.4"
+  },
+  "devDependencies": {
+    "@types/benchmark": "^1.0.31",
+    "@types/microtime": "^2.1.0",
+    "@types/node": "^12.11.7"
+  }
+}
