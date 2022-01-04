@@ -4,7 +4,7 @@ A points in polygons spatial join for Rust and WebAssembly.
 
 ## Background
 
-🌵[See my blog post about this experiment 2019-11-12](https://blog.ricegeo.dev/points-within-polygons/)
+🌵[See my blog post about this experiment 2019-11-12](https://github.com/guidorice/devblog/blob/master/src/pages/points-within-polygons/index.md)
 
 I modeled this after the [Turf.js](http://turfjs.org/)
 [pointsWithinPolygon](http://turfjs.org/docs/#pointsWithinPolygon) function and
